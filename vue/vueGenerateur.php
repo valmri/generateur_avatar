@@ -24,7 +24,7 @@ if ( $_SERVER["SCRIPT_FILENAME"] == __FILE__ ) {
             </div>
         </div>
         <div class="box_btn">
-            <a href="./index.php"><input class="btn_envoyer" type="submit" value="Recommencer"></a>            
+            <a href="./index.php"><input class="btn_envoyer" type="submit" value="Recommencer"></a>
         </div>
     </div>
     <script src="https://kit.fontawesome.com/960726704c.js" crossorigin="anonymous"></script>

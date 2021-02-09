@@ -4,7 +4,7 @@ if ($_SERVER["SCRIPT_FILENAME"] == __FILE__) {
 }
 
 // Initialisation des variables :
-$messageErreur = "";    // Variable permettant d'afficher les messages d'erreurs
+$messageErreur="";    // Variable permettant d'afficher les messages d'erreurs
 $verifAvatar="";        // Variable permettant de vérifier l'exitence de l'avatar dans l'API
 $verifPseudo="";        // Variable permettant de vérifier l'existence du pseudo dans l'hôtel en fonction salon l'API
 $ok = false;            // Variable permettant d'afficher le résultat (image avatar + lien)
@@ -76,8 +76,10 @@ if (isset($_POST["pseudo"]) && isset($_POST["hotel"])){                         
                             $resultat=$resultat."=".$objet;                                  // Concaténation avec tenir ou boire un objet à la suite de $action
                         }                        
                     }
-                    if (isset($saluer)) {                                                    // Cas où saluer est sélectionné
+                    if (isset($saluer) && $saluer !== "null") {                                // Cas où saluer est sélectionné
                         $resultat=$resultat.",".$saluer;                                     // Concaténation à la suite de $action
+                    }else {
+                        $resultat=$resultat."";
                     }
                     $resultat=$resultat."&gesture=".$emotion;                                // Concaténation avec l'émotion
                     $resultat=$resultat."&head_direction=".$direction_tete;                  // Concaténation avec la direction de la tête
